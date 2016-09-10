@@ -14,7 +14,7 @@ from scrapy.http import Request
 
 class ItjuziPipeline(object):
 	def __init__(self):
-	self.conn = MySQLdb.connect(user='root', 'wytwyb', 'lianjia_beijing', 'localhost', charset="utf8", use_unicode=True)
+	self.conn = MySQLdb.connect(user='******', '*****', 'lianjia_beijing', 'localhost', charset="utf8", use_unicode=True)
 	self.cursor = self.conn.cursor()
 
 	def process_item(self, item, spider):

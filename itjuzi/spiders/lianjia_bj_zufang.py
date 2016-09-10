@@ -30,8 +30,9 @@ class LianjiaBjZufangSpider(scrapy.Spider):
 		}
 
 	def parse(self, response):
-		l = ItemLoader(item = ItjuziItem(),response=response)
+		#l = ItemLoader(item = ItjuziItem(),response=response)
 		for i in range(0,len(response.xpath("//div[@class='info-panel']/h2/a/text()").extract())):
+			l = ItemLoader(item = ItjuziItem(),response=response)
 			info = response.xpath("//div[@class='info-panel']/h2/a/text()").extract()[i].encode('utf-8')
 			local = response.xpath("//div[@class='info-panel']").xpath(".//span[@class='region']/text()").extract()[i].encode('utf-8')
 			house_layout = response.xpath("//div[@class='info-panel']").xpath(".//span[@class='zone']//text()").extract()[i].encode('utf-8')

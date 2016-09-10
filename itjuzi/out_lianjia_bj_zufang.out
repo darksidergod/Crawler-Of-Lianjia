@@ -1,0 +1,34 @@
+Traceback (most recent call last):
+  File "/usr/local/bin/scrapy", line 11, in <module>
+    sys.exit(execute())
+  File "/usr/local/lib/python2.7/dist-packages/scrapy/cmdline.py", line 141, in execute
+    cmd.crawler_process = CrawlerProcess(settings)
+  File "/usr/local/lib/python2.7/dist-packages/scrapy/crawler.py", line 238, in __init__
+    super(CrawlerProcess, self).__init__(settings)
+  File "/usr/local/lib/python2.7/dist-packages/scrapy/crawler.py", line 129, in __init__
+    self.spider_loader = _get_spider_loader(settings)
+  File "/usr/local/lib/python2.7/dist-packages/scrapy/crawler.py", line 325, in _get_spider_loader
+    return loader_cls.from_settings(settings.frozencopy())
+  File "/usr/local/lib/python2.7/dist-packages/scrapy/spiderloader.py", line 33, in from_settings
+    return cls(settings)
+  File "/usr/local/lib/python2.7/dist-packages/scrapy/spiderloader.py", line 20, in __init__
+    self._load_all_spiders()
+  File "/usr/local/lib/python2.7/dist-packages/scrapy/spiderloader.py", line 28, in _load_all_spiders
+    for module in walk_modules(name):
+  File "/usr/local/lib/python2.7/dist-packages/scrapy/utils/misc.py", line 71, in walk_modules
+    submod = import_module(fullpath)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/root/code/github/Crawler-Of-Lianjia/itjuzi/spiders/lianjia_bj_zufang.py", line 10, in <module>
+    class LianjiaBjZufangSpider(scrapy.Spider):
+  File "/root/code/github/Crawler-Of-Lianjia/itjuzi/spiders/lianjia_bj_zufang.py", line 14, in LianjiaBjZufangSpider
+    data = json.load(data_file)
+  File "/usr/lib/python2.7/json/__init__.py", line 291, in load
+    **kw)
+  File "/usr/lib/python2.7/json/__init__.py", line 339, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python2.7/json/decoder.py", line 364, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python2.7/json/decoder.py", line 382, in raw_decode
+    raise ValueError("No JSON object could be decoded")
+ValueError: No JSON object could be decoded
